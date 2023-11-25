@@ -1,0 +1,114 @@
+$xxl: 1440px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 320px;
+
+@mixin gridCenter() {
+  display: grid;
+  place-items: center;
+  @content;
+}
+
+@mixin alignItems() {
+  align-items: center;
+  display: flex;
+  @content;
+}
+
+@mixin justifyContent() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @content;
+}
+
+@mixin flexColumn() {
+  display: flex;
+  flex-direction: column;
+  @content;
+}
+
+// custom width
+@mixin media($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+
+//  1400
+@mixin xxl {
+  @media (max-width: $xxl) {
+    @content;
+  }
+}
+
+// 1200
+@mixin xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+// 992;
+@mixin lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+// 768px;
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+// 576px;
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+// 320px;
+@mixin xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@include xxl {
+  .container {
+    max-width: $xxl;
+    padding: 0 100px;
+  }
+}
+
+@include xl {
+  .container {
+    max-width: $xl;
+    padding: 0 60px;
+  }
+}
+
+@include lg {
+  .container {
+    max-width: $lg;
+    padding: 0 40px;
+  }
+}
+
+@include md {
+  .container {
+    max-width: $md;
+    padding: 0 30px;
+  }
+}
+
+@include sm {
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
